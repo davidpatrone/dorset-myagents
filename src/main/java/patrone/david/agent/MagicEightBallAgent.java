@@ -10,7 +10,7 @@ import edu.jhuapl.dorset.agents.AgentRequest;
 import edu.jhuapl.dorset.agents.AgentResponse;
 
 /**
- * No matter what the input in, it returns with one of the
+ * No matter what the input is, it returns with one of the
  * Magic Eight Ball responses.
  * 
  * https://en.wikipedia.org/wiki/Magic_8-Ball
