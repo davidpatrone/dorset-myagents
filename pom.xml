@@ -19,6 +19,11 @@
 			<artifactId>dorset-core</artifactId>
 			<version>${dorset.version}</version>
 		</dependency>
+	    <dependency>
+			<groupId>edu.jhuapl.dorset.components</groupId>
+			<artifactId>tools</artifactId>
+			<version>0.4.0-SNAPSHOT</version>
+		</dependency>
 		<dependency>
 			<groupId>edu.jhuapl.dorset.agents</groupId>
 			<artifactId>general</artifactId>

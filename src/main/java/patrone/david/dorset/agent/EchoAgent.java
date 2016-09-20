@@ -1,7 +1,7 @@
 /**
  * 
  */
-package patrone.david.agent;
+package patrone.david.dorset.agent;
 
 import edu.jhuapl.dorset.agents.AbstractAgent;
 import edu.jhuapl.dorset.agents.AgentRequest;
@@ -15,9 +15,9 @@ import edu.jhuapl.dorset.agents.AgentResponse;
  */
 public class EchoAgent extends AbstractAgent {
 
-	@Override
-	public AgentResponse process(AgentRequest request) {
-		AgentResponse r = new AgentResponse(request.getText());
-		return r;
-	}
+    @Override
+    public AgentResponse process(AgentRequest request) {
+        AgentResponse r = new AgentResponse(request.getText());
+        return r;
+    }
 }
