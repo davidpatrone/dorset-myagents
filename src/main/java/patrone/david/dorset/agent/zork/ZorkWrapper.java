@@ -11,12 +11,16 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * This kicks off a process for this game, and manages the in/out streams to/from it.
  * 
  *
  */
 public class ZorkWrapper {
+    private final Logger logger = LoggerFactory.getLogger(ZorkWrapper.class);
 
     protected ProcessBuilder processBuilder;
     protected Process process;
@@ -60,6 +64,8 @@ public class ZorkWrapper {
     }
 
     public void shutDown() {
+        logger.debug("Zork shut down.");
+
         if (process != null) {
             process.destroyForcibly();
         }
@@ -71,7 +77,7 @@ public class ZorkWrapper {
     protected String getResponse() {
         final StringBuilder sb = new StringBuilder();
 
-        // KICK OFF A THREAD THAT ONLY LIVES FOR 3 sec MAX to gather OUTPUT)
+        // Kick off a thread that runs for 3 sec MAX to gather output)
         ExecutorService executor = Executors.newFixedThreadPool(1);
 
         executor.submit(() -> {
@@ -105,7 +111,7 @@ public class ZorkWrapper {
             // we don't hang waiting for more output that isn't coming.
             executor.awaitTermination(3, TimeUnit.SECONDS);
         } catch (InterruptedException ie) {
-            ie.printStackTrace();
+            logger.info("Problem terminating executator", ie);
         }
 
         String returnString = sb.toString();

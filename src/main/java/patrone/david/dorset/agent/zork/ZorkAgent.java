@@ -5,6 +5,9 @@ package patrone.david.dorset.agent.zork;
 
 import java.io.IOException;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import edu.jhuapl.dorset.agents.AbstractAgent;
 import edu.jhuapl.dorset.agents.AgentRequest;
 import edu.jhuapl.dorset.agents.AgentResponse;
@@ -25,6 +28,8 @@ import edu.jhuapl.dorset.agents.AgentResponse;
  * Pass this full path to zork into this ZorkAgent.
  */
 public class ZorkAgent extends AbstractAgent {
+    private final Logger logger = LoggerFactory.getLogger(ZorkAgent.class);
+
     protected String zorkLocation;
     protected ZorkWrapper zork;
 
