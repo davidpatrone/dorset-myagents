@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package patrone.david.dorset.agent;
 
@@ -11,12 +11,17 @@ import edu.jhuapl.dorset.Response.Type;
 import edu.jhuapl.dorset.agents.AbstractAgent;
 import edu.jhuapl.dorset.agents.AgentRequest;
 import edu.jhuapl.dorset.agents.AgentResponse;
+import edu.jhuapl.dorset.agents.Description;
 
 /**
  * Provides the current date or current time. eg: "What time is it?" "What day/date is it?"
- * 
+ *
  */
 public class CurrentDateTimeAgent extends AbstractAgent {
+
+    private static final String SUMMARY =
+                    "Returns the current date or time in the local time zone and GMT.";
+    private static final String EXAMPLE = "What time is it?; What [day|date] is it?";
 
     private SimpleDateFormat amPmTimeFormat;
     private SimpleDateFormat utcTimeFormat;
@@ -24,6 +29,8 @@ public class CurrentDateTimeAgent extends AbstractAgent {
     private SimpleDateFormat dayOfYearFormat;
 
     public CurrentDateTimeAgent() {
+        setDescription(new Description("CurrentDateTime", SUMMARY, EXAMPLE));
+
         amPmTimeFormat = new SimpleDateFormat("hh:mm.ssa z");
         utcTimeFormat = new SimpleDateFormat("HH:mm.ss z");
         utcTimeFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
