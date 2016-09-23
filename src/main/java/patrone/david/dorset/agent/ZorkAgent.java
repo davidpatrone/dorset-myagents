@@ -1,7 +1,7 @@
 /**
  * 
  */
-package patrone.david.dorset.agent.zork;
+package patrone.david.dorset.agent;
 
 import java.io.IOException;
 

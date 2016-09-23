@@ -31,8 +31,8 @@ public class CurrentDateTimeAgent extends AbstractAgent {
     public CurrentDateTimeAgent() {
         setDescription(new Description("CurrentDateTime", SUMMARY, EXAMPLE));
 
-        amPmTimeFormat = new SimpleDateFormat("hh:mm.ssa z");
-        utcTimeFormat = new SimpleDateFormat("HH:mm.ss z");
+        amPmTimeFormat = new SimpleDateFormat("hh:mm:ssa z");
+        utcTimeFormat = new SimpleDateFormat("HH:mm:ss z");
         utcTimeFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
         dateFormat = new SimpleDateFormat("EEEE, MMMM dd, yyyy");
         dayOfYearFormat = new SimpleDateFormat("DD");
