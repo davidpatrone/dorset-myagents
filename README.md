@@ -11,5 +11,4 @@ Current agents include:
 Other things:
 - **TapAgent**: Testing tool to wrap any agent and get access to the requests coming in and responses going out.
 - **SimpleClientUI**: Provides a simple Java Swing UI for sending queries to an Application, and displaying responses.
-- 
 
