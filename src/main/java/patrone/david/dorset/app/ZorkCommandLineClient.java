@@ -1,16 +1,16 @@
 /**
  * 
  */
-package patrone.david.dorset.client;
+package patrone.david.dorset.app;
 
 import edu.jhuapl.dorset.components.tools.CommandLineClient;
-import patrone.david.dorset.agent.zork.ZorkAgent;
+import patrone.david.dorset.agent.ZorkAgent;
 
 /**
  * Example Zork client for dorset, assuming zork is installed at /usr/local/bin.
  * 
  */
-public class ZorkClient {
+public class ZorkCommandLineClient {
 
     /**
      * Starts the command line client
