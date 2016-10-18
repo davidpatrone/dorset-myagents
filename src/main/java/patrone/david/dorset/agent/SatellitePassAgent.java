@@ -89,6 +89,10 @@ public class SatellitePassAgent extends AbstractAgent {
         // TODO enable location detection in the request
         List<SatRecord> data = getData(defaultLat, defaultLon, defaultAlt);
 
+        if (data == null) {
+            return new AgentResponse("I'm sorry, but I can't connect to my data source right now.");
+        }
+
         String query = request.getText();
         if (isNextSatelliteQuery(query)) {
             // next visible satellite that appears after now
@@ -199,6 +203,9 @@ public class SatellitePassAgent extends AbstractAgent {
         String url = generateURL(lat, lon, alt, localTimeZone.getDisplayName(false, TimeZone.SHORT,
                         Locale.getDefault(Locale.Category.DISPLAY)));
         HttpResponse httpResponse = client.execute(HttpRequest.get(url));
+        if (httpResponse == null) {
+            return null;
+        }
         List<SatRecord> data = parseData(httpResponse.asString());
         return data;
     }
