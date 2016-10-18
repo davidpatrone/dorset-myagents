@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package patrone.david.dorset.agent;
 
@@ -16,7 +16,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * This kicks off a process for this game, and manages the in/out streams to/from it.
- * 
+ *
  *
  */
 public class ZorkWrapper {
@@ -29,11 +29,12 @@ public class ZorkWrapper {
     protected boolean hasEnded;
 
     /**
-     * 
+     *
      * @param zorkLocation full path the the local 'zork' executable
      */
     public ZorkWrapper(String zorkLocation) {
         this.processBuilder = new ProcessBuilder(zorkLocation);
+        this.processBuilder.redirectErrorStream(true); // error will also come through out
         this.hasEnded = false;
     }
 
